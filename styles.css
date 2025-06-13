@@ -1,0 +1,345 @@
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --text-color: #212529;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+    --card-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    --text-muted: #6c757d;
+}
+
+[data-theme="dark"] {
+    --primary-color: #0d6efd;
+    --secondary-color: #adb5bd;
+    --background-color: #212529;
+    --text-color: #ffffff;
+    --card-bg: #343a40;
+    --border-color: #495057;
+    --card-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    --text-muted: #adb5bd;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    transition: all 0.3s ease;
+    box-shadow: var(--card-shadow);
+    color: var(--text-color);
+}
+
+.card-header {
+    background-color: var(--card-bg);
+    border-bottom-color: var(--border-color);
+}
+
+.navbar {
+    box-shadow: var(--card-shadow);
+}
+
+.news-card {
+    height: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.reading-time {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.category-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 0.8rem;
+    padding: 0.4em 0.8em;
+}
+
+.views-count {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+#themeToggle {
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+}
+
+#themeToggle:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.alert {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.alert-info {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.category-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.category-filter {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+}
+
+.category-filter:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.category-filter.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.category-filter .badge {
+    margin-left: auto;
+    background-color: var(--secondary-color);
+}
+
+.category-filter:hover .badge,
+.category-filter.active .badge {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .col-lg-3 {
+        margin-bottom: 2rem;
+    }
+    
+    .card-title {
+        font-size: 1rem;
+    }
+    
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+footer {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Стили для поросячьего режима */
+body.pig-mode {
+    background-color: #ffd6e7 !important;
+}
+
+body.pig-mode .navbar {
+    background-color: #ff69b4 !important;
+}
+
+body.pig-mode .card {
+    background-color: #fff0f5 !important;
+    border-color: #ffb6c1 !important;
+}
+
+body.pig-mode .btn-primary {
+    background-color: #ff69b4 !important;
+    border-color: #ff69b4 !important;
+}
+
+body.pig-mode .btn-primary:hover {
+    background-color: #ff1493 !important;
+    border-color: #ff1493 !important;
+}
+
+body.pig-mode .card-header {
+    background-color: #ffb6c1 !important;
+}
+
+body.pig-mode .card-title,
+body.pig-mode .card-text,
+body.pig-mode .text-muted,
+body.pig-mode .reading-time,
+body.pig-mode .views-count {
+    color: #000000 !important;
+}
+
+body.pig-mode .category-badge,
+body.pig-mode .badge.bg-primary {
+    background-color: #ff69b4 !important;
+    color: white !important;
+}
+
+.pig-cursor {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23ff69b4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>'), auto !important;
+}
+
+/* Стили для поросячьего режима */
+#pigModeToggle {
+    background: #FFD700 !important;
+    border: none !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+#pigModeToggle:hover {
+    background: #FFA500 !important;
+    transform: scale(1.05) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Стили для режима демократии */
+body.democracy-mode {
+    background: url('pub/american.gif') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    position: relative !important;
+}
+
+body.democracy-mode .container {
+    position: relative;
+    z-index: 1;
+}
+
+body.democracy-mode .card {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border: 2px solid #B22234 !important;
+    backdrop-filter: blur(5px) !important;
+}
+
+body.democracy-mode .navbar {
+    background: linear-gradient(to right, #B22234, white, #3C3B6E) !important;
+}
+
+body.democracy-mode .card-header {
+    background: linear-gradient(to right, #B22234, #3C3B6E) !important;
+    color: white !important;
+}
+
+body.democracy-mode .btn-primary {
+    background-color: #B22234 !important;
+    border-color: #B22234 !important;
+}
+
+body.democracy-mode .btn-primary:hover {
+    background-color: #3C3B6E !important;
+    border-color: #3C3B6E !important;
+}
+
+body.democracy-mode .category-badge,
+body.democracy-mode .badge.bg-primary {
+    background: linear-gradient(to right, #B22234, #3C3B6E) !important;
+    color: white !important;
+}
+
+body.democracy-mode footer {
+    background: linear-gradient(to right, #B22234, white, #3C3B6E) !important;
+    color: white !important;
+}
+
+/* Стили для ползунка громкости */
+.democracy-volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    min-width: 250px;
+}
+
+.democracy-volume-control .form-range {
+    width: 100px;
+    height: 5px;
+    margin: 0;
+    pointer-events: none;
+}
+
+.democracy-volume-control .form-range::-webkit-slider-thumb {
+    background: #B22234;
+    cursor: not-allowed;
+}
+
+.democracy-volume-control .form-range::-moz-range-thumb {
+    background: #B22234;
+    cursor: not-allowed;
+}
+
+.democracy-volume-control .form-range::-webkit-slider-runnable-track {
+    background: #3C3B6E;
+}
+
+.democracy-volume-control .form-range::-moz-range-track {
+    background: #3C3B6E;
+}
+
+#democracyVolumeBtn {
+    background: linear-gradient(to right, #B22234, #3C3B6E) !important;
+    border: 2px solid white !important;
+    color: white !important;
+    font-weight: bold !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+#democracyVolumeBtn:hover {
+    transform: scale(1.05) !important;
+    background: linear-gradient(to right, #3C3B6E, #B22234) !important;
+}
+
+#democracyVolumeBtn.volume-changed {
+    animation: volumePulse 0.5s ease;
+}
+
+@keyframes volumePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+} 
